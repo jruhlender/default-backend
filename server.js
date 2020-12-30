@@ -8,7 +8,7 @@ app.get('/healthz', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.status(404).sendFile('index.html');
+  res.status(404).sendFile('index.html', { root: __dirname });
 });
 
 app.listen(8080, () => console.log('App listening on port 8080'));
